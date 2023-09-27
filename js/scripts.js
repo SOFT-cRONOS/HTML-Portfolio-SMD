@@ -60,3 +60,36 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
+// Genera un número de CAPTCHA aleatorio de cuatro dígitos
+function generateCaptcha() {
+    return Math.floor(1000 + Math.random() * 9000);
+}
+
+// Crea el CAPTCHA y muestra en el contenedor
+function createCaptcha() {
+    const captchaContainer = document.getElementById("captcha-container");
+    const captchaValue = generateCaptcha();
+    captchaContainer.textContent = captchaValue;
+    return captchaValue;
+}
+
+// Verifica el CAPTCHA ingresado por el usuario
+function verifyCaptcha() {
+    var captcha = document.getElementById("captcha-container");
+    var captchaText = captcha.textContent;
+    const userInput = document.getElementById("captcha-input").value;
+    if (userInput.toString() === captchaText.toString()) {
+        alert("¡CAPTCHA válido!");
+    } else {
+        alert("¡CAPTCHA incorrecto!");
+    }
+}
+
+// Inicializa el CAPTCHA cuando se carga la página
+window.addEventListener("load", createCaptcha);
+
+// Agrega un evento de clic al botón de verificación
+const verifyButton = document.getElementById("verify-button");
+verifyButton.addEventListener("click", verifyCaptcha);
