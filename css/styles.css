@@ -11119,6 +11119,16 @@ header.masthead h1, header.masthead .h1 {
 }
 
 /* ########################################### */
+/* seccion del contacto */
+
+.datos{
+  margin: auto 0 auto 0;
+}
+
+/* Fin seccion del contacto */
+/* ########################################### */
+
+/* ########################################### */
 /* seccion del footer */
 
 footer {
