@@ -11051,6 +11051,8 @@ header.masthead h1, header.masthead .h1 {
   margin-left: 1.2rem;
 }
 
+
+
 .social-icons i {
   margin: 0 5px 0 5px;
 }
@@ -11184,6 +11186,10 @@ footer {
   color: white;
 }
 
+.bold {
+  font-weight: 400;
+}
+
 /* Fin seccion del footer */
 /* ########################################### */
 
@@ -11205,3 +11211,12 @@ footer {
 }
 /* Fin seccion de copyright */
 /* ########################################### */
+
+@media (max-width: 992px) {
+  .btn-vermas{
+    display: none;
+  }
+  .formulario-mail{
+    display:none;
+  }
+}
