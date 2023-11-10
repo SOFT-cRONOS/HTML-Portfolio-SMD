@@ -101,6 +101,9 @@
   background-attachment: fixed;
 }
 
+.fa-lg {
+  font-size: 4rem;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
@@ -11218,5 +11221,21 @@ footer {
   }
   .formulario-mail{
     display:none;
+  }
+}
+
+
+/* seccion legales */
+
+#legales {
+  /* margin-top: 4rem;  */
+}
+
+@media (min-width: 992px) {
+  header.masthead.banner-pagina {
+    height: 20vh;
+    min-height: 5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 0;
   }
 }
