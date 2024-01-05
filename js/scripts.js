@@ -75,15 +75,22 @@ function createCaptcha() {
     return captchaValue;
 }
 
+let message = document.getElementById("text-message")
 // Verifica el CAPTCHA ingresado por el usuario
 function verifyCaptcha() {
     var captcha = document.getElementById("captcha-container");
     var captchaText = captcha.textContent;
     const userInput = document.getElementById("captcha-input").value;
     if (userInput.toString() === captchaText.toString()) {
-        alert("¡CAPTCHA válido!");
+        message.classList.remove("d-none");
+        message.classList.add("d-block");
+        message.style.color = "var(--bs-green)"
+        message.innerHTML = "¡Ups! Por el momento esto no esta funcionando, contactanos por whatsapp!";
     } else {
-        alert("¡CAPTCHA incorrecto!");
+        message.classList.remove("d-none");
+        message.classList.add("d-block");
+        message.style.color = "--bs-red"
+        message.innerHTML = "¡Ups! Algo no esta bien, intentemos mas tarde";
     }
 }
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
+        <meta name="description" content="Productos personalizados para emprendimientos" />
         <meta name="author" content="" />
         <title>SM - Diseño</title>
         <!-- Favicon-->
@@ -21,7 +21,15 @@
         <link href="css/styles.css" rel="stylesheet" />
 
         <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1X2T403K7F"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
+            gtag('config', 'G-1X2T403K7F');
+        </script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -239,27 +247,24 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col mb-3">
+                                <div class="col-4 mb-3">
                                     <!-- capcha -->
                                     <label for="captcha-container" class="form-label">Numero de Capcha</label>
                                     <div id="captcha-container"></div>
                                     <!-- FIN capcha -->
                                 </div>
                                 <div class="col mb-3">
-                                    <label for="input-group" class="form-label">Ingrese el Capcha</label>
+                                    <label for="input-group" class="form-label">Ingrese el Numero</label>
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" id="captcha-input" placeholder="Ingresa el CAPTCHA" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                        <button class="btn btn-outline-secondary" type="submit" id="verify-button">Enviar</button>
+                                        <a class="btn btn-outline-secondary" id="verify-button">Enviar</a>
                                     </div>
-                                    <!-- Submit success message-->
-                                    <div class="d-none" id="submitSuccessMessage">
-                                        <div class="text-center mb-3">
-                                            <div class="fw-bolder">Form submission successful!</div>
-                                        </div>
-                                    </div>
-                                    <!-- Submit error message-->
-                                    <div class="d-none" id="submitErrorMessage">
-                                        <div class="text-center text-danger mb-3">Error sending message!</div>
+
+                                </div>
+                                <!-- Submit success message-->
+                                <div id="submitMessage">
+                                    <div class="text-center mb-3">
+                                        <div id="text-message" class="d-none fw-bolder">Mensaje enviado!</div>
                                     </div>
                                 </div>
                             </div>
