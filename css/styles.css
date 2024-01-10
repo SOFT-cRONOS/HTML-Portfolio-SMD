@@ -1,4 +1,57 @@
 @charset "UTF-8";
+
+#content {
+  display: none;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50px;
+  --b: 8px; 
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%,#f03355) content-box;
+  -webkit-mask:
+    repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
+    radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
+  -webkit-mask-composite: destination-in;
+          mask-composite: intersect;
+  animation:l4 1s infinite steps(10);
+}
+@keyframes l4 {to{transform: rotate(1turn)}}
+
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+
+
+
 /*!
 * Start Bootstrap - Creative v7.0.7 (https://startbootstrap.com/theme/creative)
 * Copyright 2013-2023 Start Bootstrap
@@ -11231,11 +11284,109 @@ footer {
   /* margin-top: 4rem;  */
 }
 
+header.masthead.banner-pagina-titulos {
+  height: 40vh;
+  min-height: 5rem;
+  padding-top: 4.5rem;
+  padding-bottom: 0;
+  padding-top:8rem;
+}
+
 @media (min-width: 992px) {
   header.masthead.banner-pagina {
-    height: 20vh;
+    height: 36vh;
     min-height: 5rem;
     padding-top: 4.5rem;
     padding-bottom: 0;
+  }
+
+  header.masthead.banner-pagina-titulos {
+    height: 15rem;
+    min-height: 5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 0;
+    padding-top:8rem;
+  }
+  
+}
+
+
+#examples {
+  background-image: url("../assets/fondo_1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:0;
+  max-width: 100%;
+  padding: 4rem;
+}
+
+#examples h2, #examples p {
+  color:white;
+}
+
+#examples .card p{
+  color:black;
+}
+
+#examples > .card{
+  padding:0
+}
+
+.row-custom {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+}
+
+.pricing-section {
+  padding: 1rem 2rem 2rem 1rem;
+
+}
+.table-responsive{
+  padding: 0 2rem 0 2rem;
+}
+.card {
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card.primary {
+  /* transform: scale(1.07); */
+}
+
+.card .bg-primary {
+  color: var(--bs-white);
+}
+
+@media (min-width: 992px) {
+  .pricing-section {
+    padding: 2rem 9rem 2rem 9rem;
+  
+  }
+  .table-responsive{
+    padding: 0 5rem 0 5rem;
+  }
+  .card {
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+  }
+  
+  .card.primary {
+    transform: scale(1.07);
+  }
+  
+  .card .bg-primary {
+    color: var(--bs-white);
   }
 }
